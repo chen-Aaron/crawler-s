@@ -59,18 +59,18 @@ r = redis.StrictRedis(host = rediser['host'], port = rediser['port'], password =
 
 # book = book.split('---')
 
-myli = r.llen('mangalist');
+# myli = r.llen('mangalist');
 
-li = r.lrange('mangalist', 0, myli)
+# li = r.lrange('mangalist', 0, myli)
 
-for i in li:
-    withList = i.split('---')
-    name = withList[1]
-    listName = withList[0]
-    length = r.llen(listName)
-    imgList = r.lrange(listName, 0, myli)
-    crawler = downLoad.index.Downloader(imgList, name)
-    crawler.run()
+# for i in li:
+#     withList = i.split('---')
+#     name = withList[1]
+#     listName = withList[0]
+#     length = r.llen(listName)
+#     imgList = r.lrange(listName, 0, myli)
+#     crawler = downLoad.index.Downloader(imgList, name)
+#     crawler.run()
 
 
 
@@ -82,17 +82,17 @@ for i in li:
 
 # pages.run()
 
-# url = 'http://18h.animezilla.com/manga/313/600'
+url = 'http://18h.animezilla.com/manga/313/1'
 
-# res = requests.get(url, proxies=proxies);
+res = requests.get(url, proxies=proxies);
 
-# html = pq(res.content);
+html = pq(res.content);
 
-# content = html('#page-current')
+content = html('#page-current')
 
-# num = content.find('a:last-child').attr('href')
-# num = num.split('/')
-# print num[5]
+num = content.find('a:last-child').attr('href')
+num = num.split('/')
+print num[5]
 # content = res.content
 # html = html('.entry-title')
 

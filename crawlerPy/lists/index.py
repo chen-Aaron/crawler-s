@@ -46,7 +46,7 @@ class List:
 
         self.currentIndex = self.currentIndex + 1
 
-        if(href == self.currentIndex):
+        if(href[5] == self.currentIndex):
             
             self.saveLink(res.find('#comic'))
             
