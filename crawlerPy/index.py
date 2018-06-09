@@ -69,7 +69,6 @@ for i in li:
     listName = withList[0]
     length = r.llen(listName)
     imgList = r.lrange(listName, 0, myli)
-    print imgList
     crawler = downLoad.index.Downloader(imgList, name)
     crawler.run()
 

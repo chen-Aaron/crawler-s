@@ -57,5 +57,8 @@ while myUrl:
     listCrawler = lists.index.List(myUrl, r) 
 
     listCrawler.run()
+    
+    myUrl = r.lpop('manga')
+
 
 print 'finish'
