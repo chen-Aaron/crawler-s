@@ -40,7 +40,7 @@ class List:
     def manage(self):
         res = self.getLists()
 
-        href = res.find('a:last-child').href
+        href = res.find('a:last-child').attr('href')
 
         href = href.split('/')
 
