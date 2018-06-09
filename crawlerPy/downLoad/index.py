@@ -12,14 +12,15 @@ class Downloader:
         "num": 608,
         "name": "123" 
     }
-    dirs = './imgs/'
+    dirs = '../imgs/'
 
     headers = {"Referer": "http://18h.animezilla.com/manga/608"}
 
-    def __init__(self, imgList):
+    def __init__(self, imgList, name):
         self.files = {"num": 608, "name": "123"}
         self.list = imgList
-        self.dir = Downloader.dirs + Downloader.files['name']
+        self.book = name
+        self.dir = Downloader.dirs + self.book
 
     def run(self):
         if(not self.isDirExit(self.dir)):
