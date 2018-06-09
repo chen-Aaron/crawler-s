@@ -8,7 +8,8 @@ from pyquery import PyQuery as pq
 class List:
     proxies = {'http': 'socks5:127.0.0.1:1086'}
 
-    path = '#comic'
+
+    path = '#page-current'
 
     def __init__(self, url, redis):
         
@@ -39,11 +40,15 @@ class List:
     def manage(self):
         res = self.getLists()
 
-        if(res.attr('src') != None):
-            
-            self.saveLink(res)
+        href = res.find('a:last-child').href
 
-            self.currentIndex = self.currentIndex + 1
+        href = href.split('/')
+
+        self.currentIndex = self.currentIndex + 1
+
+        if(href == self.currentIndex):
+            
+            self.saveLink(res.find('#comic'))
             
             self.manage()
 

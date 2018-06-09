@@ -82,16 +82,18 @@ for i in li:
 
 # pages.run()
 
-# url = 'http://www.baidu.com'
+# url = 'http://18h.animezilla.com/manga/313/600'
 
 # res = requests.get(url, proxies=proxies);
 
 # html = pq(res.content);
 
-# content = html('.pure-u-1-2 .entry-title a')
+# content = html('#page-current')
 
-# print content.html()==None
-
+# num = content.find('a:last-child').attr('href')
+# num = num.split('/')
+# print num[5]
+# content = res.content
 # html = html('.entry-title')
 
 # content = html('a')
