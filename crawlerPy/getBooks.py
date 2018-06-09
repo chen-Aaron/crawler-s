@@ -49,8 +49,13 @@ r = redis.StrictRedis(host = rediser['host'], port = rediser['port'], password =
 # url = url.split('/')
 # print url[3]+url[4]
 
-myUrl = r.lpop('manga')
+# myUrl = r.lpop('manga')
+# while myUrl:
+#     print 'yes'
 
-listCrawler = lists.index.List(myUrl, r) 
+while myUrl:
+    listCrawler = lists.index.List(myUrl, r) 
 
-listCrawler.run()
+    listCrawler.run()
+
+print 'finish'
