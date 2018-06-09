@@ -25,7 +25,7 @@ cf.read("db.ini")
 
 rediser = {}
 
-proxies = {'http': 'socks5:127.0.0.1:1086'}
+# proxies = {'http': 'socks5:127.0.0.1:1086'}
 
 rediser['host'] = cf.get("redis", "db_host")
 

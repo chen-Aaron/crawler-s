@@ -53,7 +53,7 @@ class List:
 
         print url
                
-        res = requests.get(url, proxies=List.proxies)
+        res = requests.get(url)
 
         html = pq(res.content)
 

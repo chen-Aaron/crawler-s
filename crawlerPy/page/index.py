@@ -47,7 +47,7 @@ class Pages:
         else:
            url = self.pageUrl + str(self.currentIndex)
                
-        res = requests.get(url, proxies=Pages.proxies)
+        res = requests.get(url)
 
         print url
 
