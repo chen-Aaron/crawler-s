@@ -42,6 +42,9 @@ class List:
 
         href = res.find('a:last-child').attr('href')
 
+        if(href == None):
+            return False
+
         href = href.split('/')
 
         self.currentIndex = self.currentIndex + 1
