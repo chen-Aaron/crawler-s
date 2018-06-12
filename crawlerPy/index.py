@@ -72,8 +72,11 @@ for i in li:
     crawler = downLoad.index.Downloader(imgList, name)
     crawler.run()
 
-
-
+# import os
+# for root, dirs, files in os.walk("./", topdown=False):
+#     print len(files)
+    
+   
 # crawler = downLoad.index.Downloader(li)
 
 # crawler.run()

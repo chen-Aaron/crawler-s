@@ -22,17 +22,16 @@ class Downloader:
         self.book = name
         self.dir = Downloader.dirs + self.book
 
-    def run(self):
         if(not self.isDirExit(self.dir)):
             self.makdeDir(self.dir)
-        else:
-            length = len(self.list)
-            for i in range(0, length):
-                res = self.download(self.list[i])
-                fileName = self.getFileName(self.list[i])
-                self.saveFile(res, fileName)
-                
-            
+
+    def run(self):
+       
+        length = len(self.list)
+        for i in range(0, length):
+            res = self.download(self.list[i])
+            fileName = self.getFileName(self.list[i])
+            self.saveFile(res, fileName)
 
     def isDirExit(self, dir):
         result = os.path.exists(dir)
@@ -41,7 +40,7 @@ class Downloader:
 
     def makdeDir(self, dir):
         os.makedirs(dir)
-        self.run()
+        # self.run()
     
     # 下载图片
     def download(self, url):
@@ -56,8 +55,15 @@ class Downloader:
 
     def getFileName(self, url):
         fileName = url.split('/').pop()
+        fileName = fileName.split('.').pop()
+        nums = self.getNums()
+        fileName = str(nums) + '.' + fileName
         fileName = self.dir + '/' + fileName
         return fileName
 
-
+    def getNums(self):
+        length = 1
+        for root, dirs, files in os.walk(self.dir, topdown=False):
+            length = len(files)
+        return length
         
