@@ -15,7 +15,7 @@ import redis
 
 import sys
 
-from pyquery import PyQuery as pq
+# from pyquery import PyQuery as pq
 
 sys.getdefaultencoding()
 
