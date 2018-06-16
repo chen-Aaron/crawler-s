@@ -5,9 +5,9 @@ import urllib
 
 import downLoad.index
 
-import page.index
+# import page.index
 
-import lists.index
+# import lists.index
 
 import ConfigParser
 
