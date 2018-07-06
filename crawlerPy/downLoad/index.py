@@ -30,6 +30,8 @@ class Downloader:
         length = len(self.list)
         for i in range(0, length):
             res = self.download(self.list[i])
+            if(res == ''): 
+                continue
             fileName = self.getFileName(self.list[i])
             self.saveFile(res, fileName)
 
@@ -44,7 +46,11 @@ class Downloader:
     
     # 下载图片
     def download(self, url):
-        content = requests.get(url, headers= Downloader.headers)
+        try:
+            content = requests.get(url, headers= Downloader.headers, timeout=2)
+        
+        except:
+            content = ''
 
         return content
     
