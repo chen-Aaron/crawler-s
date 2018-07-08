@@ -24,6 +24,8 @@ class Downloader:
 
         if(not self.isDirExit(self.dir)):
             self.makdeDir(self.dir)
+        else:
+           self.list = [] 
 
     def run(self):
        
